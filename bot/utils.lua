@@ -1295,6 +1295,7 @@ function send_markdown(msg, receiver, text, disable_web_page_preview, markdown, 
   end 
 end 
 function send_api_keyboard(msg, receiver, text, keyboard)
+  local api_key = '242451729:AAFaaGmXUei7ro7462luER0LasIO0WIOhn8'
   local api_key = 'http://api.telegram.org/bot'..(_config.key)
   local url_api = 'https://api.telegram.org/bot'..api_key..'/sendMessage?chat_id='.. receiver..'&parse_mode=markdown&&text='..URL.escape(text)..'&disable_web_page_preview=true&reply_markup='..json:encode(keyboard)
   local dat, res = https.request(url_api)
